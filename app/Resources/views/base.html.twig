@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Praktijkopdracht{% endblock %}</title>
+
+        {% block stylesheets %}{% endblock %}
+        {% stylesheets filter="scssphp,cssrewrite" output="css/app.css"
+            "../src/AppBundle/Resources/assets/sass/main.scss"
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    </head>
+
+    <body>
+            <div id="wrapper">
+                <div id="container">
+                   {% block content %}{% endblock %}
+                </div>
+            </div>
+
+        {% block javascripts %}{% endblock %}
+    </body>
+
+</html>
